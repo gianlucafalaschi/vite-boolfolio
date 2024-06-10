@@ -1,16 +1,20 @@
 <script>
-export default {
+import ProjectList from './components/ProjectList.vue';
 
+export default {
+  components: {
+    ProjectList
+  }
 }
 </script>
 
 <template>
-  <h1>Ciao Ciao</h1>
+  <ProjectList></ProjectList>
 </template>
 
 <style lang="scss">
-@use './style/generic';
-@use './style/partials/variables' as *;  // le variables vanno importate in tutti ii componenti figli se vengono usate
+@use './style/generic';  // generic va' importato solo in App.vue anche se viene usato in altri componenti
+@use './style/partials/variables' as *;  // le variables vanno importate in tutti i componenti figli se vengono usate
 
 h1 {
   color: $main-color;
