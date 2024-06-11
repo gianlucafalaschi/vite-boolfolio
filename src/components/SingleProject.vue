@@ -19,7 +19,8 @@ export default {
             <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
                 <h5 class="card-title">{{ projectDetails.name }}</h5>
-                 <p v-if="projectDetails.summary"  class="card-text">{{ projectDetails.summary }}</p>
+                <!-- stampo il summary solo se è popolato --> 
+                <p v-if="projectDetails.summary"  class="card-text">{{ projectDetails.summary }}</p>
                  <!--  <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
         </div>

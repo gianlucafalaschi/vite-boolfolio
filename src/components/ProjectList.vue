@@ -15,14 +15,14 @@ export default {
     methods: {
       getProjects() {
         // Funzione che prende i project dall'API
-        axios.get('http://127.0.0.1:8000/api/projects')
+        axios.get('http://127.0.0.1:8000/api/projects') // url dell'API
         .then((response) => {
-            this.projects = response.data.results;
+            this.projects = response.data.results;  // salvo i dati nell'array projects
         });
       }
     },
   mounted() {
-    this.getProjects();   // la funzione per la chiamata axios viene chiamata al caricamento della pagian
+    this.getProjects();   // la funzione per la chiamata axios viene chiamata al caricamento della pagina
   }
 }
 </script>
