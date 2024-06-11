@@ -1,11 +1,11 @@
 <script>
 import axios from 'axios';
-import SingleProject from './SingleProject.vue';
+import ProjectCard from './ProjectCard.vue';
 
 export default {
     name: 'ProjectList',
     components: {
-        SingleProject
+        ProjectCard
     },
     data() {
         return {
@@ -32,8 +32,8 @@ export default {
         <h1>All the projects</h1>
 
         <div class="row row-cols-3">                     
-            <!-- :projectDetails è la props in SingleProject passata dinamicamente al singolo oggetto project -->
-            <SingleProject v-for="project in projects" :projectDetails="project" :key="project.id"></SingleProject>
+            <!-- :projectDetails è la props in ProjectCard passata dinamicamente al singolo oggetto project -->
+            <ProjectCard v-for="project in projects" :projectDetails="project" :key="project.id"></ProjectCard>
         </div>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <script>
 export default {
-    name: 'SingleProject',
-    /* per stampare name e summary delle card ho bisogno di project, che è un object */
+    name: 'ProjectCard',
+    /* per stampare name e summary delle card ho bisogno di projectDetails, che è un object */
     props: {
         projectDetails: Object 
     },
