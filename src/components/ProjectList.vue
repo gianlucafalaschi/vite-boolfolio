@@ -1,8 +1,12 @@
 <script>
 import axios from 'axios';
+import SingleProject from './SingleProject.vue';
 
 export default {
     name: 'ProjectList',
+    components: {
+        SingleProject
+    },
     data() {
         return {
             projects: []   // array inizialmente vuoto che contiene tutti i post
@@ -27,19 +31,9 @@ export default {
     <div class="container">
         <h1>All the projects</h1>
 
-        <div class="row row-cols-3">
-            <!-- single Project -->
-            <div v-for="project in projects" class="col">
-                <div class="card my-4">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.name }}</h5>
-                        <p v-if="project.summary"  class="card-text">{{ project.summary }}</p>
-                       <!--  <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
-            </div>
-            <!--/ single Project -->
+        <div class="row row-cols-3">                     
+            <!-- :projectDetails è la props in SingleProject passata dinamicamente al singolo oggetto project -->
+            <SingleProject v-for="project in projects" :projectDetails="project" :key="project.id"></SingleProject>
         </div>
     </div>
 </template>
