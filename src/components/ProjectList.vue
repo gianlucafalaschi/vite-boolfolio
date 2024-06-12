@@ -32,8 +32,10 @@ export default {
         <h1>All the projects</h1>
 
         <div class="row row-cols-3">                     
-            <!-- :projectDetails è la props in ProjectCard passata dinamicamente al singolo oggetto project -->
-            <ProjectCard v-for="project in projects" :projectDetails="project" :key="project.id"></ProjectCard>
+            <div v-for="project in projects" class="col" :key="project.id">
+                <!-- :projectDetails è la props in ProjectCard passata dinamicamente al singolo oggetto project -->
+                <ProjectCard  :projectDetails="project"></ProjectCard>
+            </div>
         </div>
     </div>
 </template>

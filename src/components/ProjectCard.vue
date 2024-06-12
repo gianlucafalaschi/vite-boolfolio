@@ -27,22 +27,20 @@ export default {
 </script>
 
 <template>
-    <div class="col">
-        <div class="card my-4">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-                <h5 class="card-title">{{ projectDetails.name }}</h5>
-                <div v-if="projectDetails.type">
+    <div class="card my-4">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+            <h5 class="card-title">{{ projectDetails.name }}</h5>
+            <div v-if="projectDetails.type">
                     <strong>Type:</strong> {{ projectDetails.type.name  }}
-                </div>
-                <!-- stampo le technologies solo se l'array che le contiene ha piu' di 0 elementi -->
-                <div v-if="projectDetails.technologies.length > 0">
-                    <strong>Technology:</strong> <span v-for="technology in projectDetails.technologies"> {{ technology.name }} &nbsp </span>
-                </div>
-                <!-- stampo il summary solo se è popolato -->          <!-- chiamo la funzione che taglia il testo se sopra i 100 caratteri -->
-                <p v-if="projectDetails.summary"  class="card-text">{{ truncateText(projectDetails.summary) }}</p>
-                 <!--  <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
+             <!-- stampo le technologies solo se l'array che le contiene ha piu' di 0 elementi -->
+            <div v-if="projectDetails.technologies.length > 0">
+                    <strong>Technology:</strong> <span v-for="technology in projectDetails.technologies"> {{ technology.name }} &nbsp </span>
+            </div>
+            <!-- stampo il summary solo se è popolato -->          <!-- chiamo la funzione che taglia il testo se sopra i 100 caratteri -->
+            <p v-if="projectDetails.summary"  class="card-text">{{ truncateText(projectDetails.summary) }}</p>
+            <!--  <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
     </div>
 </template>
