@@ -1,4 +1,6 @@
 <script>
+import { router } from '../router';
+
 export default {
     name: 'AppHeader'
 }  
@@ -15,13 +17,14 @@ export default {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <!-- sostituire a con router-link e href con :to="{ name: 'nomedellarotta' } -->
+                        <router-link class="nav-link active" aria-current="page" :to="{ name: 'home' }">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                        <router-link class="nav-link active" aria-current="page" :to="{ name: 'about'}">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Projects</a>
+                        <router-link class="nav-link active" aria-current="page" :to="{ name: 'projects'}">Projects</router-link>
                     </li>
                 </ul>
             </div>

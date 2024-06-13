@@ -1,10 +1,10 @@
 <script>
-import ProjectList from './components/ProjectList.vue';
+// import ProjectList from './components/ProjectList.vue';      componente tolto, sostituito con router-view
 import AppHeader from './components/AppHeader.vue';
 
 export default {
   components: {
-    ProjectList,
+   // ProjectList,       componente tolto, sostituito con router-view
     AppHeader
   }
 }
