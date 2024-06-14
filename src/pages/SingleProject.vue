@@ -30,7 +30,20 @@ export default {
          project è null, per evitare errori mettiamo stampiamo solo se project è diverso da null  -->
         <div v-if="project"> 
             <h2>{{ project.name }}</h2>
-            <h3 v-if="project.client_name">{{ project.client_name }}</h3>
+
+            <div v-if="project.client_name">
+                <strong>Client name</strong>: {{ project.client_name }}
+            </div>
+
+            <div v-if="project.type">
+                <strong>Type</strong>: {{ project.type.name }}
+            </div>
+
+            <div v-if="project.technologies">
+                <strong>Technologies</strong>
+                <div v-for="technology in project.technologies">{{ technology.name }}</div>
+            </div>
+            
             <div class="mt-3" v-if="project.cover_image">
                 <!-- la parte fissa dell'immagine la posso vedere dall'inspect nel sito backoffice -->
                 <img :src="`http://127.0.0.1:8000/storage/${project.cover_image}`" alt="project.name"> 
