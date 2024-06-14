@@ -40,7 +40,7 @@ export default {
             </div>
             <!-- stampo il summary solo se è popolato -->          <!-- chiamo la funzione che taglia il testo se sopra i 100 caratteri -->
             <p v-if="projectDetails.summary"  class="card-text">{{ truncateText(projectDetails.summary) }}</p>
-            <!--  <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            <router-link :to="{name: 'single-project', params: { slug: projectDetails.slug } }" class="btn btn-primary">Read more</router-link>
         </div>
     </div>
 </template>
